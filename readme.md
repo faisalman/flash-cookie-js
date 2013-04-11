@@ -2,21 +2,33 @@
 
 JavaScript interface library to manage persistent cross-browser Flash cookies.
 
+## Method
+
+* get(key)
+* set(key, value)
+* remove(key)
+* clear()
+
 ## Example
 
-Not yet working, maybe someday...
-
 ```html
-<script type="text/javascript" src="flash-cookie.js"></script>
+<script type="text/javascript" src="flash-cookie.min.js"></script>
 <script type="text/javascript">
-    FlashCookie.set("key1", "value1");
-    FlashCookie.set("key2", "value2");    
-    FlashCookie.get("key1");             // "value1"    
-    FlashCookie.remove("key1");    
-    FlashCookie.get("key1");             // undefined
-    FlashCookie.get("key2");             // "value2"    
-    FlashCookie.clear();    
-    FlashCookie.get("key2");             // undefined
+    FlashCookie.onReady(function (cookie) {
+        cookie.set("key1", "value1");
+        cookie.set("key2", "value2");
+
+        console.log(cookie.get("key1"));    // "value1"
+
+        cookie.remove("key1");
+
+        console.log(cookie.get("key1"));    // undefined
+        console.log(cookie.get("key2"));    // "value2"
+
+        cookie.clear();
+
+        console.log(cookie.get("key2"));    // undefined
+    });
 </script>
 ```
 
