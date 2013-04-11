@@ -1,0 +1,9 @@
+{
+  "name": "flash-cookie-js",
+  "version": "0.0.1",
+  "description": "JavaScript interface library to manage persistent cross-browser Flash cookies.",
+  "keywords": ["flash", "cookie"],
+  "scripts": ["dist/flash-cookie.min.js"],
+  "main": "dist/flash-cookie.min.js",
+  "license": "MIT"
+}
